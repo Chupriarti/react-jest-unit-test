@@ -3,7 +3,9 @@ import React from 'react';
 function App() {
   return (
     <div >
-      React Jest Unit Test App
+      <h1>Hello world</h1>
+      <button>click me</button>
+      <input type="text" placeholder='input value...' />
     </div>
   );
 }
