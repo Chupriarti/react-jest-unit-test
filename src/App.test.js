@@ -9,4 +9,5 @@ test('renders learn react link', () => {
   expect(helloWorldElem).toBeInTheDocument();
   expect(btn).toBeInTheDocument();
   expect(input).toBeInTheDocument();
+  screen.debug()
 });
