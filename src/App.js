@@ -14,10 +14,10 @@ function App() {
 
   return (
     <div >
-      {toggle === true  && <div>toggle</div> }
+      {toggle === true  && <div data-testid="toggle-elem">toggle</div> }
       {data && <div style={{color: 'red'}}>data</div>}
       <h1>Hello world</h1>
-      <button onClick={onClick}>click me</button>
+      <button data-testid="toggle-btn" onClick={onClick}>click me</button>
       <input type="text" placeholder='input value...' />
     </div>
   );
