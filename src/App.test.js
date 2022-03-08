@@ -19,5 +19,6 @@ describe('TEST APP', () => {
     // expect(helloWorldElem).toBeNull()
     const helloWorldElem = await screen.findByText(/data/i)
     expect(helloWorldElem).toBeInTheDocument()
+    expect(helloWorldElem).toHaveStyle({color: 'red'})
   });
 })
