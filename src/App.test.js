@@ -13,9 +13,11 @@ describe('TEST APP', () => {
     expect(input).toMatchSnapshot();
   });
 
-  test('test queryByText', () => {
+  test('test findByText', async () => {
     render(<App />);
-    const helloWorldElem = screen.queryByText(/hello2/i)
-    expect(helloWorldElem).toBeNull()
+    // const helloWorldElem = screen.queryByText(/hello2/i)
+    // expect(helloWorldElem).toBeNull()
+    const helloWorldElem = await screen.findByText(/data/i)
+    expect(helloWorldElem).toBeInTheDocument()
   });
 })
