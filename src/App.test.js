@@ -12,4 +12,10 @@ describe('TEST APP', () => {
     expect(input).toBeInTheDocument();
     expect(input).toMatchSnapshot();
   });
+
+  test('test queryByText', () => {
+    render(<App />);
+    const helloWorldElem = screen.queryByText(/hello2/i)
+    expect(helloWorldElem).toBeNull()
+  });
 })
