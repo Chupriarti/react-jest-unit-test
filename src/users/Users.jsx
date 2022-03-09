@@ -15,7 +15,11 @@ const Users = () => {
 
     return (
         <div>
-
+            {users.map(user => 
+                <div key={user.id} data-testid="user-item">
+                    {user.name}
+                </div>
+            )}
         </div>
     )
 }
