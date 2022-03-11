@@ -1,6 +1,7 @@
 import React from 'react'
-import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
+import { Link, Route, Routes } from 'react-router-dom'
 import AboutPage from './pages/AboutPage'
+import ErrorPage from './pages/ErrorPage'
 import MainPage from './pages/MainPage'
 
 const App = () => {
@@ -11,6 +12,7 @@ const App = () => {
       <Routes>
         <Route path="/" element= {<MainPage />} />
         <Route path="/about" element= {<AboutPage />} />
+        <Route path="/*" element= {<ErrorPage />} />
       </Routes>
     </div>
   )
