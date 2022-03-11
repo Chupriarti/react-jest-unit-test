@@ -32,14 +32,14 @@ describe('users test', () => {
         jest.clearAllMocks()
     })
 
-    test('renders', async () => {
-        axios.get.mockReturnValue(response)
-        render(<Users />)
-        const users = await screen.findAllByTestId('user-item')
-        expect(users.length).toBe(3)
-        expect(axios.get).toBeCalledTimes(1)
-        screen.debug()
-    })
+    // test('renders', async () => {
+    //     axios.get.mockReturnValue(response)
+    //     render(<Users />)
+    //     const users = await screen.findAllByTestId('user-item')
+    //     expect(users.length).toBe(3)
+    //     expect(axios.get).toBeCalledTimes(1)
+    //     screen.debug()
+    // })
 
     test('test redirect to details page', async () => {
         axios.get.mockReturnValue(response)
