@@ -6,9 +6,9 @@ import App from "./App"
 describe('test app', () => {
     test('router test', () => {
         render(
-        <MemoryRouter>
-            <App />
-        </MemoryRouter>
+            <MemoryRouter>
+                <App />
+            </MemoryRouter>
         )
         const mainLink = screen.getByTestId('main-link')
         const aboutLink = screen.getByTestId('about-link')
