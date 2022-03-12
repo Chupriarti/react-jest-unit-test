@@ -4,6 +4,7 @@ import axios from 'axios'
 import userEvent from '@testing-library/user-event'
 import { MemoryRouter, Route, Routes } from 'react-router-dom'
 import UserDetailsPage from '../pages/UserDetailsPage'
+import AppRouter from '../router/AppRouter'
 
 jest.mock('axios')
 
@@ -44,11 +45,9 @@ describe('users test', () => {
     test('test redirect to details page', async () => {
         axios.get.mockReturnValue(response)
         render(
-            <MemoryRouter initialEntries={['/users']}>
-                <Routes>
-                    <Route path="/users" element= {<Users />} />
-                    <Route path="/users/:id" element= {<UserDetailsPage />} />
-                </Routes>
+            <MemoryRouter>
+                <AppRouter />
+                <Users />
             </MemoryRouter>
         )
         const users = await screen.findAllByTestId('user-item')
