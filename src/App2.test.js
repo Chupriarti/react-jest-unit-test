@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event'
-import App from './App';
+import App from './App2';
 
 describe('TEST APP', () => {
   test('renders learn react link', () => {
