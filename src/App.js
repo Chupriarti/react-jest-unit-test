@@ -1,11 +1,6 @@
 import React from 'react'
-import { Link, Route, Routes } from 'react-router-dom'
-import AboutPage from './pages/AboutPage'
-import ErrorPage from './pages/ErrorPage'
-import MainPage from './pages/MainPage'
-import UserDetailsPage from './pages/UserDetailsPage'
+import { Link } from 'react-router-dom'
 import AppRouter from './router/AppRouter'
-import Users from './users/Users'
 
 const App = () => {
   return (
