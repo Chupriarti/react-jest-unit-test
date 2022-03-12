@@ -5,16 +5,24 @@ import Navbar from "./Navbar"
 
 
 describe('Navbar test', () => {
-  test('render', () => {
+  test('test user link', () => {
+    renderWithRouter(<Navbar />)
+    const usersLink = screen.getByTestId('users-link')
+    userEvent.click(usersLink)
+    expect(screen.getByTestId('users-page')).toBeInTheDocument()
+  })
+
+  test('test about link', () => {
+    renderWithRouter(<Navbar />)
+    const aboutLink = screen.getByTestId('about-link')
+    userEvent.click(aboutLink)
+    expect(screen.getByTestId('about-page')).toBeInTheDocument()
+  })
+
+  test('test main link', () => {
     renderWithRouter(<Navbar />)
     const mainLink = screen.getByTestId('main-link')
-    const aboutLink = screen.getByTestId('about-link')
-    const usersLink = screen.getByTestId('users-link')
-    userEvent.click(aboutLink)
-    expect(screen.getAllByTestId('about-page'))
     userEvent.click(mainLink)
-    expect(screen.getAllByTestId('main-page'))
-    userEvent.click(usersLink)
-    expect(screen.getAllByTestId('users-page'))
+    expect(screen.getByTestId('main-page')).toBeInTheDocument()
   })
 })
