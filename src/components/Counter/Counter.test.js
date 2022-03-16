@@ -3,19 +3,12 @@ import userEvent from "@testing-library/user-event"
 import { Provider } from "react-redux"
 import Counter from "./Counter"
 import { createReduxStore } from '../../store/store';
+import { renderWithRedux } from "../../tests/helpers/renderWithRedux";
 
 
 describe('Counter test', () => {
     test('Basic test', async () => {
-        const {getByTestId} = render(
-            <Provider 
-                store={createReduxStore({
-                    counter: {value: 10 }
-                })}
-            >
-                <Counter />
-            </Provider>
-        )
+        const {getByTestId} = render(renderWithRedux(<Counter />, { counter: {value: 10 }}))
 
         const incrementBtn = getByTestId('increment-btn')
         expect(getByTestId('value-title')).toHaveTextContent('10')
