@@ -17,9 +17,9 @@ const Counter = () => {
 
     return (
         <div>
-            <h1>Value = {value}</h1>
-            <button onClick={onIncrement}>Increment</button>
-            <button onClick={onDecrement}>Decrement</button>
+            <h1 data-testid="value-title">Value = {value}</h1>
+            <button data-testid="increment-btn" onClick={onIncrement}>Increment</button>
+            <button data-testid="decrement-btn" onClick={onDecrement}>Decrement</button>
         </div>
     )
 }
